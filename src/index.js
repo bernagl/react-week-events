@@ -123,7 +123,7 @@ export const Body = ({ dates, weekDays, eventRender, emptyRender }) => {
               {weekDays[i].events.length > 0
                 ? weekDays[i].events.map((ev, j) => {
                     return (
-                      <React.Fragment key={j}>{eventRender(ev)}</React.Fragment>
+                      <React.Fragment key={j}>{eventRender(ev, j)}</React.Fragment>
                     )
                   })
                 : emptyRender()}

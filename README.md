@@ -27,8 +27,10 @@ class Example extends Component {
     ]
   }
 
-  eventRender = event => (
-    <div onClick={() => console.log(event)}>{event.name}</div>
+  eventRender = (event, i) => (
+    <div onClick={() => console.log(`Event: ${event.name} on position: ${i}`)}>
+      {event.name}
+    </div>
   )
 
   emptyRender = () => <div>No events</div>
