@@ -8,23 +8,57 @@
 
 ```bash
 npm install --save react-week-events
+yarn add react-week-events
 ```
 
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
-
-import MyComponent from 'react-week-events'
+import WeekCalendar from 'react-week-events'
 
 class Example extends Component {
-  render () {
+  state = {
+    events: [
+      { name: 'Event 1', date: new Date() },
+      { name: 'Event 2', date: new Date() },
+      { name: 'Event 3', date: new Date() }
+    ]
+  }
+
+  eventRender = event => (
+    <div onClick={() => console.log(event)}>{event.name}</div>
+  )
+
+  emptyRender = () => <div>No events</div>
+
+  render() {
+    const { events } = this.state
     return (
-      <MyComponent />
+      <WeekCalendar
+        events={events}
+        emptyRender={this.emptyRender}
+        eventRender={this.eventRender}
+        past={true}
+      />
     )
   }
 }
 ```
+
+##### Important: This component needs moment.js :tw-203c:
+
+---
+
+# Props
+
+| Prop        | Type     | Default               | Description                                               |
+| ----------- | -------- | --------------------- | --------------------------------------------------------- |
+| dateLabel   | String   | 'date'                | Object date value name for render event on respective day |
+| events      | []       | []                    | List of events to render                                  |
+| emptyRender | Function | () => 'No event'      | Message to show when no event                             |
+| eventRender | Function | (event) => event.name | Function to render and handle the event                   |
+| past        | Boolean  | true                  | Option to show past dates                                 |
 
 ## License
 

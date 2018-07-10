@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import './syles.css'
+import './styles.css'
 
 export default class WeekCalendar extends Component {
   state = {
@@ -136,12 +136,12 @@ export const Body = ({ dates, weekDays, eventRender, emptyRender }) => {
 }
 
 WeekCalendar.defaultProps = {
-  emptyRender: () => <span>No event</span>,
+  dateLabel: 'date',
+  emptyRender: () => <div className="empty-state">No event</div>,
   events: [],
   eventRender: event => (
     <div className="day-event fade event">{event.name}</div>
   ),
-  dateLabel: 'date',
   past: true
 }
 
