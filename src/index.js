@@ -64,7 +64,7 @@ export default class WeekCalendar extends Component {
     const { dates, weekDays } = this.state
     const { emptyRender, eventRender } = this.props
     return (
-      <React.Fragment>
+      <div id="react-week-calendar">
         <div>
           <button
             onClick={() => this.daysHandler()}
@@ -82,7 +82,7 @@ export default class WeekCalendar extends Component {
           emptyRender={emptyRender}
           eventRender={eventRender}
         />
-      </React.Fragment>
+      </div>
     )
   }
 }
