@@ -1,8 +1,158 @@
-/* add css styles here (optional) */
+@media (max-width: 992px) {
+  #react-week-calendar .show-sm {
+    display: block !important;
+  }
+  #react-week-calendar .hidden-sm {
+    display: none !important;
+  }
+  #react-week-calendar .week {
+    display: block !important;
+    width: 100%;
+  }
+  #react-week-calendar .day {
+    max-width: 100% !important;
+    width: 100%;
+    margin-top: 10px !important;
+    margin: 0px !important;
+  }
+  #react-week-calendar .event-list {
+    margin: 10px 0px;
+  }
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+#react-week-calendar .row.event-list {
+  width: 100%;
+}
+
+#react-week-calendar .event-list-parent {
+  padding: 0px !important;
+}
+
+#react-week-calendar .hidden-lg {
+  display: none;
+}
+
+#react-week-calendar .hidden-sm {
+  display: none;
+}
+
+#react-week-calendar .show-lg {
+  display: flex;
+}
+
+#react-week-calendar .week {
+  display: flex;
+}
+
+#react-week-calendar .day {
+  flex-basis: 0;
+  flex: 1 1 0;
+  margin: 0px 2.5px;
+}
+
+#react-week-calendar .day:last-child {
+  margin-right: 0px !important;
+}
+
+#react-week-calendar .day:first-child {
+  margin-left: 0px !important;
+}
+
+#react-week-calendar .day-row {
+  background-color: #337ddf;
+  color: white;
+}
+
+#react-week-calendar .calendar-container {
+  min-height: 200px;
+}
+
+#react-week-calendar .day-event {
+  background: #e8e8e8;
+  padding: 10px;
+  margin: 2.5px 0px;
+  width: 100%;
+  word-break: break-all;
+  cursor: pointer;
+}
+
+#react-week-calendar .day-event:last-child {
+  margin-bottom: 0px !important;
+}
+
+#react-week-calendar .day-event:first-child {
+  margin-top: 0px !important;
+}
+
+#react-week-calendar .today {
+  border: 1px solid #337ddf;
+  border-top: none;
+}
+
+#react-week-calendar .week-header {
+  background: #337ddf;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+#react-week-calendar .box-button {
+  border-radius: 0 !important;
+}
+
+#react-week-calendar .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#react-week-calendar .col-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#react-week-calendar .empty-state {
+  color: #e8e8e8;
+}
+
+#react-week-calendar .btn {
+  border-color: #337ddf;
+  padding: 7px 20px;
+  background-color: #337ddf;
+  color: white;
+  cursor: pointer;
+  border-radius: 0px;
+  outline: none;
+  border: none;
+  transition-duration: .2s;
+}
+
+#react-week-calendar .btn:active {
+  border-style: outset;
+  border: none;
+  background-color: #7ea8df;
+}
+
+#react-week-calendar .fade {
+  animation: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes btn-click {
+  from {
+    background-color: white;
+  }
+  to {
+    background-clip: #337ddf;
+  }
 }
