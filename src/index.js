@@ -25,10 +25,17 @@ export default class WeekCalendar extends Component {
     this.setState({ events }, () => this.daysHandler(0))
   }
 
+  componentWillReceiveProps(newProps) {
+    newProps.events !== this.props.events &&
+      this.setState({ events: newProps.events }, () =>
+        this.daysHandler(false)
+      )
+  }
+
   daysHandler = sum => {
     const { events, weekDays, week } = this.state
     const { dateLabel, past } = this.props
-    const weekNumber = sum ? week + 1 : past ? week - 1 : 0
+    const weekNumber = sum ? week + 1 : past ? (sum ? week - 1 : 0) : 0
     var startOfWeek = moment()
       .add(weekNumber, 'weeks')
       .startOf('isoWeek')
@@ -123,7 +130,9 @@ export const Body = ({ dates, weekDays, eventRender, emptyRender }) => {
               {weekDays[i].events.length > 0
                 ? weekDays[i].events.map((ev, j) => {
                     return (
-                      <React.Fragment key={j}>{eventRender(ev, j)}</React.Fragment>
+                      <React.Fragment key={j}>
+                        {eventRender(ev, j)}
+                      </React.Fragment>
                     )
                   })
                 : emptyRender()}
