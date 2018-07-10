@@ -16,6 +16,7 @@ yarn add react-week-events
 ```jsx
 import React, { Component } from 'react'
 import WeekCalendar from 'react-week-events'
+import 'react-week-calendar/styles.css'
 
 class Example extends Component {
   state = {

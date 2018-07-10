@@ -1,6 +1,6 @@
 {
   "name": "react-week-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React.js component to show/handle week events",
   "author": "bernagl",
   "license": "MIT",
