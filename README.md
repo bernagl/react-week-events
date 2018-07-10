@@ -1,6 +1,6 @@
 # react-week-events
 
-> A React.js component to show/handle week events
+> A React.js responsive week calendar to show/handle events
 
 [![NPM](https://img.shields.io/npm/v/react-week-events.svg)](https://www.npmjs.com/package/react-week-events) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
