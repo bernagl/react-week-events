@@ -27,7 +27,7 @@ export default class WeekCalendar extends Component {
 
   componentWillReceiveProps(newProps) {
     newProps.events !== this.props.events &&
-      this.setState({ events: newProps.events }, () => this.daysHandler(false))
+      this.setState({ events: newProps.events }, () => this.daysHandler(0))
   }
 
   daysHandler = sum => {
@@ -73,7 +73,7 @@ export default class WeekCalendar extends Component {
       <div id="react-week-calendar">
         <div>
           <button
-            onClick={() => this.daysHandler()}
+            onClick={() => this.daysHandler(-1)}
             className="btn"
           >{`<`}</button>
           <button
